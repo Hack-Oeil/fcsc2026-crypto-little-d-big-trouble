@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <!--Page Title-->
+    <title>Hack-Oeil - Les CTFs de Cyrhades</title>
+    <!--Meta Keywords and Description-->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" title="Favicon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Vérifie si la fenêtre est dans une iframe
+            if (window.self !== window.top) {
+                document.querySelectorAll('a').forEach((link) => {
+                    link.addEventListener('click', (event) => {
+                        const a = event.target.closest('a[href^="http"]');
+                        if (a) {
+                            event.preventDefault();
+                            window.parent.postMessage({
+                                type: "open-external",
+                                url: a.href
+                            }, "*");
+                        }
+                    });
+                });
+            }
+            // Active la coloration syntaxique :
+            if (window.hljs) {
+                hljs.highlightAll();
+            } else {
+                console.error("Highlight.js non chargé !");
+            }
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+        <!--Main Content Area-->
+        <main id="content">
+            <!--Ctf-->
+            <section class="ctf scrollto">
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Challenge #645</h3>
+                            <h2 class="section-title">Little d - Big trouble</h2>
+                            <p>
+Lo standard FIPS 186-5 impone nella generazione di una chiave RSA che l'esponente privato <code>d</code> sia maggiore di <code>2**(size//2)</code>. Lo standard specifica inoltre che nel caso estremamente raro in cui <code>d</code> sia più piccolo, occorre generare nuovi numeri primi <code>p</code> e <code>q</code>.<br /><br />Mettete alla prova la vostra fortuna inviando uno di questi casi estremamente rari.<br /><br /><img src="assets/images/little-d-big-trouble.jpg">
+                            </p>
+                            <h4>File da studiare:</h4>
+                            <p>../files/little-d-big-trouble.py</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>FCSC 2025</h3>
+                            <h2 class="section-title">Hackropole</h2>
+                            <p class="section-subtitle">
+                                Link ufficiale:
+                                <a target="_blank" href="https://hackropole.fr/fr/challenges/crypto/fcsc2026-crypto-little-d-big-trouble-1/">https://hackropole.fr/fr/challenges/crypto/fcsc2026-crypto-little-d-big-trouble-1/</a>
+                                <br />
+                                Autore: Neige
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Apprendimento</h3>
+                            <h2 class="section-title">Documentazione e Video</h2>
+                            <p class="section-subtitle">
+                                Nessuna documentazione al momento
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="row clearfix">
+                    <div class="col-1">
+                        <div class="section-heading">
+                            <h3>Aiuto</h3>
+                            <h2 class="section-title">Consigli e suggerimenti</h2>
+                            <p class="section-subtitle">
+                                <a target="_blank"
+                                    href="https://discord.com/channels/1175764392307077120/1175764601716092948">Thread su Discord</a>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!--End of Ctf-->
+        </main>
+        <!--End Main Content Area-->
+
+        <a id="scrollUp" href="#wrapper" style="position: fixed; z-index: 1000;"
+            aria-label="Torna in cima alla pagina" title="Torna in cima"></a>
+    </div>
+</body>
+
+</html>
