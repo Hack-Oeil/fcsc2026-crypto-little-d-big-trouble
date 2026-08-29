@@ -1,4 +1,4 @@
-# FCSC 2025 Little d - Big trouble
+# FCSC 2026 Little d - Big trouble
 
 Le standard FIPS 186-5 impose dans la génération d’une clef RSA que l’exposant privé `d` soit plus grand que `2**(size//2)`. Le standard précise d’ailleurs que dans le cas extrêment rare où `d` serait plus petit il faut générer de nouveaux nombres premiers `p` et `q`.
 
